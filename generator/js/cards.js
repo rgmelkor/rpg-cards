@@ -240,6 +240,33 @@ function card_element_dndstats(params, card_data, options) {
     return result;
 }
 
+function card_element_savagestats(params, card_data, options) {
+    var stats = ['d4', 'd4', 'd4', 'd4', 'd4'];
+    for (var i = 0; i < 5; ++i) {
+        stats[i] = params[i], 'd4' || 'd4';
+    }
+
+    var result = "";
+    result += '<table class="card-stats">';
+    result += '    <tbody><tr>';
+    result += '      <th class="card-stats-header">AGI</th>';
+    result += '      <th class="card-stats-header">SMA</th>';
+    result += '      <th class="card-stats-header">SPI</th>';
+    result += '      <th class="card-stats-header">STR</th>';
+    result += '      <th class="card-stats-header">VIG</th>';
+    result += '    </tr>';
+    result += '    <tr>';
+    result += '      <td class="card-stats-cell">' + stats[0] + '</td>';
+    result += '      <td class="card-stats-cell">' + stats[1] + '</td>';
+    result += '      <td class="card-stats-cell">' + stats[2] + '</td>';
+    result += '      <td class="card-stats-cell">' + stats[3] + '</td>';
+    result += '      <td class="card-stats-cell">' + stats[4] + '</td>';
+    result += '    </tr>';
+    result += '  </tbody>';
+    result += '</table>';
+    return result;
+}
+
 function card_element_bullet(params, card_data, options) {
     var result = "";
     result += '<ul class="card-element card-bullet-line">';
@@ -275,6 +302,7 @@ var card_element_generators = {
     boxes: card_element_boxes,
     description: card_element_description,
     dndstats: card_element_dndstats,
+    savagestats: card_element_savagestats,
     text: card_element_text,
     center: card_element_center,
     justify: card_element_justify,
